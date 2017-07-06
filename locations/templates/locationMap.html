@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Location: {{ location.name }}</h3>
+    <h4>Lon: {{ location.lon }}</h4>
+    <h4>Lat: {{ location.lat }}</h4>
+    {% for profiles in location.Location_set.all %}
+            <h3>{{ profiles.who_are_locals }}</h3>
+    {% endfor %}
+
+    <style>
+       #map {
+        height: 600px;
+        width: 100%;
+       }
+    </style>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var temp = {lat: {{ location.lat }}, lng: {{ location.lon }}};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: temp,
+            mapTypeId: 'satellite'
+        });
+        var marker = new google.maps.Marker({
+          position: temp,
+          map: map,
+            title: 'first marker'
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: "insert text about the break here from locations database"
+            });
+      marker.addListener('click', function () {
+        infowindow.open(map, marker)
+      });
+      }
+      </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API }}&callback=initMap">
+    </script>
+    <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API }}&libraries=visualization">
+    </script>
+
+{% endblock %}

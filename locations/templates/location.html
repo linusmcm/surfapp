@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for country in country  %}
+    <h2> {{ country.name }}</h2>
+        {% for state in country.state_set.all %}
+        <!-- <a href="/location/{{ state.id }}">{{ state.name }}</a> -->
+            <h3>{{ state.name }}</h3>
+            {% for region in state.region_set.all %}
+                    <h4>{{ region.name }}</h4>
+                {% for location in region.location_set.all %}
+                       <a href="/location/{{ location.id }}">{{ location.name }}</a>
+                {% endfor %}
+           {% endfor %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
