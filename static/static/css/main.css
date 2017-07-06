@@ -1,0 +1,11 @@
+.btn-primary {
+    background-image: -webkit-linear-gradient(top,#337ab7 0,#265a88 100%);
+    background-image: -o-linear-gradient(top,#337ab7 0,#265a88 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#81b71e),to(#265a88));
+    background-image: linear-gradient(to bottom,#e2f1fd 0,#265a88 100%);
+    background-repeat: repeat-x;
+    border-color: #245580;
+}
+.navbar-inverse .navbar-brand {
+    color: #329128;
+}
