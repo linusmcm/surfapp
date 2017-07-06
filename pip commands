@@ -1,0 +1,50 @@
+### library installs
+pip install Django==1.10
+pip install --upgrade django-crispy-forms
+pip install django-allauth
+pip install stripe
+pip install djangorestframework
+pip install virtualenv
+
+##################### create super user
+python manage.py createsuperuser
+
+
+#### show all libraries installed
+pip freeze
+
+
+### create new app called...
+python manage.py startapp checkout
+python manage.py startapp spots
+python manage.py startapp profiles
+python manage.py startapp contact
+python manage.py startapp surfapp
+
+###
+python manage.py collectstatic
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+#### create virtualenv
+virtualenv SurfDev
+
+source bin/activate
+
+
+
+dataVerse3Q!
+
+
+timecodes for
+Learn Python and Django - Build an eCommerce Website Step by Step from Scratch
+
+https://www.youtube.com/watch?v=9Wbfk16jEOk
+
+
+
+38:42 - static files
+3:12:57 - python anywhere account set up
+
+3:10:17 up to there.
